@@ -12,11 +12,11 @@ class Bot:
     def run(self):
         self.dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), self.start_command))
         self.dispatcher.add_handler(CommandHandler('start', self.start_command))
-        print('Bot started...')
+        print('Bot started...Lets go!')
         self.updater.start_polling()
 
     def start_command(self, update, context):
-        context.bot.send_message(chat_id=update.effective_chat.id, text='Поехали!!')
+        context.bot.send_message(chat_id=update.effective_chat.id, text='Введи команду!!')
         # for description in self.descriptions:
         #     context.bot.send_message(chat_id=update.effective_chat.id, text=f'{description} \n')
 
